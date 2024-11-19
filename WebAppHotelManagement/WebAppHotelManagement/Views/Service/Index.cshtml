@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebAppHotelManagement.Models.CustomerService>
+
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<div style="margin-top:50px">
+    @if (Session["UserId"] != null || Session["UserName"] != null)
+    {
+        if (Session["UserName"].Equals("admin"))
+        {
+            <button class="btn btn-default" style="margin-bottom:10px">
+                @Html.ActionLink("Create New Service", "Create")
+            </button>
+        }
+    }
+</div>
+
+<div class="modal-body">
+    <form id="formRoom">
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ServiceName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ServicePrice)
+                    </th>
+
+
+                    <th en>modified</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServiceName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServicePrice)
+
+                        </td>
+                        @if (Session["UserId"] != null || Session["UserName"] != "admin")
+                        {
+                            <td>
+                                @Html.ActionLink("BookingService", "BookingService", new { id = item.ServiceId })
+                            </td>
+                        }
+
+                        @if (Session["UserId"] != null || Session["UserName"] != null)
+                        {
+                            if (Session["UserName"].Equals("admin"))
+                            {
+                                <td>
+                                    @Html.ActionLink("BookingService", "BookingService", new { id = item.ServiceId }) |
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ServiceId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ServiceId })
+                                </td>
+                            }
+
+                        }
+                    </tr>
+
+                }
+
+            </table>
+        </div>
+    </form>
+</div>

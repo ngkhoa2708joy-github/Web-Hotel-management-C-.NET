@@ -1,0 +1,91 @@
+﻿@model IEnumerable<WebAppHotelManagement.Models.Invoid>
+
+@{
+    ViewBag.Title = "Invoice";
+}
+<!DOCTYPE html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<table class="table" style="margin-top:50px">
+    <tr>
+        <th>
+            InvoidID
+        </th>
+        <th>
+            BookingID
+        </th>
+        <th>
+            BookingAmount
+        </th>
+        <th>
+            ServiceAmount
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Payment
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoidID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingAmount) $
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceAmount) $
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToTalPayment) $
+            </td>
+            <td>
+                @if ((bool)item.IsActive)
+                {
+                    <div style="color:red">Unpaid</div>
+                }
+                else
+                {
+                    <div style="color:green">Paid</div>
+                }
+
+            </td>
+            <td>
+                @Html.ActionLink("Pay", "ChangeActive", new { id = item.InvoidID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div> Show :</div>
+<ul>
+    <li>@Html.ActionLink("List Unpaid", "Index", new { i = 1 })</li>
+    <li>@Html.ActionLink("List Paid", "Index", new { i = 0 })</li>
+</ul>

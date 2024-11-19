@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebAppHotelManagement.ViewModel.RoomDetailsViewModel>
+
+<table class="table table-bordered table-responsive table-hover" style="width:110% ">
+    
+    <thead style="background-color: #337ab7"    >
+        <tr>
+            @if (Session["UserId"] != null || Session["UserName"] != null)
+            {
+                if (Session["UserName"].Equals("admin"))
+                {
+                    <th>
+                        Action
+                    </th>
+                }
+
+            }
+            <th>
+                Room Image
+            </th>
+            <th>
+                Room No.
+            </th>
+            <th>
+                Room Price
+            </th>
+            <th>
+                Booking Status
+            </th>
+            <th>
+                Room Type
+            </th>
+            <th>
+                Room Capacity
+            </th>
+            <th>
+                Room Description
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if (Session["UserId"] != null || Session["UserName"] != null)
+                {
+                    if (Session["UserName"].Equals("admin"))
+                    {
+                        <td>
+                            <span id="btnDelete" class="glyphicon glyphicon-trash" onclick="DeleteRoom(@item.RoomId)"></span> &nbsp;&nbsp;
+                            <span id="btnEdit" class="glyphicon glyphicon-pencil" onclick="EditRoom(@item.RoomId)"></span> &nbsp;&nbsp;
+                        </td>
+                    }
+                }
+
+                    <td>
+                        <img src="@Url.Content("~/RoomImages/" + item.RoomImage)" width="110" height="30" class="img-responsive" />
+                    </td>
+
+                    <td>
+                        @item.RoomNumber
+                    </td>
+
+                    <td>
+                        @item.RoomPrice $
+                    </td>
+
+                    <td>
+                        @item.BookingStatus
+                    </td>
+
+                    <td>
+                        @item.RoomType
+                    </td>
+
+                    <td>
+                        @item.RoomCapacity
+                    </td>
+
+                    <td>
+                        @item.RoomDescription
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

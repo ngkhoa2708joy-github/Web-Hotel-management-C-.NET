@@ -1,0 +1,39 @@
+﻿@model WebAppHotelManagement.Models.Invoid
+
+@{
+    ViewBag.Title = "Invoid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Payment confirm</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Customer's Invoice</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.InvoidID)
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+                Confirm purchase to this Invoice.
+            </div>
+        </div>
+
+    
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Confirm" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

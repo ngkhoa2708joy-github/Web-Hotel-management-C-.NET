@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HotelDBModelStoreContainer" CdmEntityContainer="HotelDBEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HotelDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HotelDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HotelDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HotelDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HotelDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HotelDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HotelDBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_Invoice_ListAll" FunctionName="HotelDBModel.Store.sp_Invoice_ListAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_Invoice_ListAll_Result">
+          <ScalarProperty Name="InvoidID" ColumnName="InvoidID" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="BookingAmount" ColumnName="BookingAmount" />
+          <ScalarProperty Name="ServiceAmount" ColumnName="ServiceAmount" />
+          <ScalarProperty Name="ToTalPayment" ColumnName="ToTalPayment" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Invoice_ListAll_0" FunctionName="HotelDBModel.Store.sp_Invoice_ListAll_0">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_Invoice_ListAll_0_Result">
+          <ScalarProperty Name="InvoidID" ColumnName="InvoidID" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="BookingAmount" ColumnName="BookingAmount" />
+          <ScalarProperty Name="ServiceAmount" ColumnName="ServiceAmount" />
+          <ScalarProperty Name="ToTalPayment" ColumnName="ToTalPayment" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Invoice_ListAll_1" FunctionName="HotelDBModel.Store.sp_Invoice_ListAll_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_Invoice_ListAll_1_Result">
+          <ScalarProperty Name="InvoidID" ColumnName="InvoidID" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="BookingAmount" ColumnName="BookingAmount" />
+          <ScalarProperty Name="ServiceAmount" ColumnName="ServiceAmount" />
+          <ScalarProperty Name="ToTalPayment" ColumnName="ToTalPayment" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CustomerServices">
+      <EntityTypeMapping TypeName="HotelDBModel.CustomerService">
+        <MappingFragment StoreEntitySet="CustomerServices">
+          <ScalarProperty Name="ServicePrice" ColumnName="ServicePrice" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoids">
+      <EntityTypeMapping TypeName="HotelDBModel.Invoid">
+        <MappingFragment StoreEntitySet="Invoid">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ToTalPayment" ColumnName="ToTalPayment" />
+          <ScalarProperty Name="ServiceAmount" ColumnName="ServiceAmount" />
+          <ScalarProperty Name="BookingAmount" ColumnName="BookingAmount" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="InvoidID" ColumnName="InvoidID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="HotelDBModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTypes">
+      <EntityTypeMapping TypeName="HotelDBModel.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentTypes">
+          <ScalarProperty Name="PaymentType1" ColumnName="PaymentType1" />
+          <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomBookings">
+      <EntityTypeMapping TypeName="HotelDBModel.RoomBooking">
+        <MappingFragment StoreEntitySet="RoomBookings">
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="NoOfMembers" ColumnName="NoOfMembers" />
+          <ScalarProperty Name="AssignRoomId" ColumnName="AssignRoomId" />
+          <ScalarProperty Name="BookingTo" ColumnName="BookingTo" />
+          <ScalarProperty Name="BookingFrom" ColumnName="BookingFrom" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="HotelDBModel.Room">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoomDescription" ColumnName="RoomDescription" />
+          <ScalarProperty Name="RoomCapacity" ColumnName="RoomCapacity" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+          <ScalarProperty Name="BookingStatusId" ColumnName="BookingStatusId" />
+          <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+          <ScalarProperty Name="RoomImage" ColumnName="RoomImage" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomTypes">
+      <EntityTypeMapping TypeName="HotelDBModel.RoomType">
+        <MappingFragment StoreEntitySet="RoomTypes">
+          <ScalarProperty Name="RoomTypeName" ColumnName="RoomTypeName" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HotelDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingStatus">
+      <EntityTypeMapping TypeName="HotelDBModel.BookingStatu">
+        <MappingFragment StoreEntitySet="BookingStatus">
+          <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+          <ScalarProperty Name="BookingStatusId" ColumnName="BookingStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HotelDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_service_ListAll1" FunctionName="HotelDBModel.Store.sp_service_ListAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.sp_service_ListAll1_Result">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServicePrice" ColumnName="ServicePrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ServiceServeds">
+      <EntityTypeMapping TypeName="HotelDBModel.ServiceServed">
+        <MappingFragment StoreEntitySet="ServiceServed">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_get_list_roomBooking_id1" FunctionName="HotelDBModel.Store.Sp_get_list_roomBooking_id">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HotelDBModel.Sp_get_list_roomBooking_id1_Result">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="BookingFrom" ColumnName="BookingFrom" />
+          <ScalarProperty Name="BookingTo" ColumnName="BookingTo" />
+          <ScalarProperty Name="AssignRoomId" ColumnName="AssignRoomId" />
+          <ScalarProperty Name="NoOfMembers" ColumnName="NoOfMembers" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
